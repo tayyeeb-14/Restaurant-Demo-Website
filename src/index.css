@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 10% 8%;
+    --foreground: 40 20% 90%;
+
+    --card: 20 10% 12%;
+    --card-foreground: 40 20% 90%;
+
+    --popover: 20 10% 12%;
+    --popover-foreground: 40 20% 90%;
+
+    --primary: 40 60% 50%;
+    --primary-foreground: 20 10% 5%;
+
+    --secondary: 25 30% 18%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 20 10% 16%;
+    --muted-foreground: 30 10% 55%;
+
+    --accent: 40 60% 50%;
+    --accent-foreground: 20 10% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 15% 20%;
+    --input: 25 15% 20%;
+    --ring: 40 60% 50%;
+
+    --radius: 0.5rem;
+
+    --gold: 40 60% 50%;
+    --gold-light: 40 70% 65%;
+    --gold-dark: 35 50% 35%;
+    --warm-brown: 25 30% 18%;
+    --warm-brown-light: 25 25% 25%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Raleway', sans-serif;
+
+    --sidebar-background: 20 10% 10%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 40 60% 50%;
+    --sidebar-primary-foreground: 20 10% 5%;
+    --sidebar-accent: 25 30% 18%;
+    --sidebar-accent-foreground: 40 20% 90%;
+    --sidebar-border: 25 15% 20%;
+    --sidebar-ring: 40 60% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(135deg, hsl(40 70% 65%), hsl(40 60% 50%), hsl(35 50% 35%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, hsl(40 70% 65%), hsl(40 60% 50%));
+  }
+
+  .bg-dark-overlay {
+    background: linear-gradient(180deg, hsla(20, 10%, 5%, 0.7) 0%, hsla(20, 10%, 5%, 0.5) 50%, hsla(20, 10%, 5%, 0.8) 100%);
+  }
+
+  .section-padding {
+    @apply py-20 px-4 md:px-8 lg:px-16;
+  }
+
+  .gold-border {
+    border: 1px solid hsl(40 60% 50% / 0.3);
+  }
+
+  .gold-border-hover:hover {
+    border-color: hsl(40 60% 50% / 0.6);
+  }
+
+  .card-hover {
+    @apply transition-all duration-500;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px hsl(40 60% 50% / 0.15);
+  }
+}
